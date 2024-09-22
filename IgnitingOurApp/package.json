@@ -1,0 +1,22 @@
+{
+  "name": "ignitingourapp",
+  "version": "1.0.0",
+  "description": "This is namaste react by Akshay Saini",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/VikasSastiya/namaste-react-1.git)"
+  },
+  "keywords": [
+    "react",
+    "namaste",
+    "react",
+    "akshay",
+    "saini"
+  ],
+  "author": "Akshay saini",
+  "license": "ISC"
+}
