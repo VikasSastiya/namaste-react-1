@@ -1,0 +1,26 @@
+{
+  "name": "layingthefoundation",
+  "version": "1.0.0",
+  "description": "This is namaste react by akshay saini",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/VikasSastiya/namaste-react-1.git)"
+  },
+  "keywords": [
+    "react",
+    "namaste",
+    "react",
+    "akshay",
+    "saini"
+  ],
+  "author": "Akshay Saini",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
