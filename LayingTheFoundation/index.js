@@ -16,8 +16,9 @@ const Title=()=>(
    // Functional Component - NEW -a function which gives functional component 
 
 //    what is a React Functional component - just javascript function
-const HeadingComponent=()=>(
+const HeadingComponent=()=>(      // here is an example of component composition as title element is composed to function
            <div id="container">
+            <Title/>             
      <h1 className="heading">Namaste React Functional Component</h1>
      </div>
 );
