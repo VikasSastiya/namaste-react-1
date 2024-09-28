@@ -1,29 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// React.createElement =>gives you an ReactElement-JS Object => HTMLElement(render)
+// React Element
 
 
-const heading=React.createElement("h1",
-    {id:"heading"},
-    "Namaste React"
-       );
 
-console.log(heading);
-
-// JSX (transpiled before it reaches the JS Engine) - transpilation is done by PARCEL - Babel(FOR MORE INFORMATION please must visit babel.io)
-const jsxHeading=(
-   <h1 className="head" tabIndex="1">
+const Title=()=>(
+   <h1 className="head" tabIndex="5">
     Namaste React using JSX
     </h1>
-    );   //  this is JSX-
-// JSX is not html inside javascript ,JSX is a HTML like syntex or XML like syntax
+    ); 
+    
+   // ReactComponent
+   // Class Based Component - OLD - nobudy use classbased Component now a days
+   // Functional Component - NEW -a function which gives functional component 
 
-// JSx is syntex ,react element is an object
+//    what is a React Functional component - just javascript function
+const HeadingComponent=()=>(
+           <div id="container">
+     <h1 className="heading">Namaste React Functional Component</h1>
+     </div>
+);
 
 
-
-console.log(jsxHeading);
 const root=ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(jsxHeading);
+root.render(<HeadingComponent/>);
+
+// we cannot use functional component as it is in root.render() we write like this root.render(<HeadingComponent/>); which babel can understand
