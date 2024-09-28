@@ -1,23 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// React Element
+
+// how to put react element inside element
+
+const elem=<span>React Element</span>
+
 
 
 
 const Title=()=>(
+
    <h1 className="head" tabIndex="5">
+    {elem}
+
     Namaste React using JSX
     </h1>
     ); 
+    // whatever we write in This {} brackets count as javascript code
     
-   // ReactComponent
-   // Class Based Component - OLD - nobudy use classbased Component now a days
-   // Functional Component - NEW -a function which gives functional component 
-
-//    what is a React Functional component - just javascript function
-const HeadingComponent=()=>(      // here is an example of component composition as title element is composed to function
-           <div id="container">
+   const HeadingComponent=()=>(  
+     <div id="container">
+        
             <Title/>             
      <h1 className="heading">Namaste React Functional Component</h1>
      </div>
