@@ -4,11 +4,8 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 
     
-
-
-
-
 const AppLayout=()=> {
+    console.log(<Body/>);  // this is virtual dom
     return (
         <div className="app">
            <Header/>
