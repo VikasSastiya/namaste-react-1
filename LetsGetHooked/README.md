@@ -36,3 +36,33 @@
 
  export const Component;
  import {Component} from "path";
+
+
+ # Now we will make our app dynamic by adding some features to it
+
+- let us create a button 
+# React is fast and efficient in dom manipulation
+
+# What is functional component
+  - normal js function
+
+  # React HOOK
+  - normal Javasscript function hassome logic written behind it
+   - (Normal JS utility functions)
+   - two very important hooks
+   - useState() - Superpowerful react variable(gives powerful state variable)
+   - useEffect() - 
+![alt text](image.png)
+   # How react work behind the seen
+     - Reconciliation Algorithm (ReactFiber)
+
+
+
+     - Diff Algorithm means 
+     ![alt text](image-1.png)
+
+  # For more information search react fiber https://github.com/acdlite/react-fiber-architecture
+   - read
+   -imp- react is effentialy find out the difference between virtual dom
+
+   - why react is fast - because it has virtual dom ,please read reconsilation
