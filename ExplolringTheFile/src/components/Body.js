@@ -1,6 +1,6 @@
 import RestaurantCard from "../components/RestaurantCard"
 import {useState,useEffect} from "react";
-
+import Shimmer from "../components/Shimmer";
 
 const Body=() => {
     
@@ -20,8 +20,13 @@ const Body=() => {
     //    setListOfRestaurant(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)   // instead of doing this we can write this like
     setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);  // this is optional chaining please read it
     };
-
+  
+    // now if we refresh the page , the header page is shown but to show loading screen when the page is loading ,code stated below
        
+    if(listOfRestaurants.length==0) {
+        // return <h1>loading . . . </h1>;  // if API takes some time to load ,load shimmer UI
+         return <Shimmer/>
+    }
       // above line statement is same as "const arr=useState(resList);   const [listOfRestaurants,setListOfRestaurant]=arr;"
          // it can also be written as "const arr=useState(resList);  const [listOfRestaurants,setListOfRestaurants]=arr; by the way this is normal javascript"
     //  let listOfRestaurants=[];
