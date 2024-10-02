@@ -16,17 +16,17 @@ const Body=() => {
             "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.7195687&lng=75.8577258&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
         );     // fetch data from swiggy API
        const json=await data.json();
-       console.log(json);
+    //    console.log(json);
     //    setListOfRestaurant(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)   // instead of doing this we can write this like
     setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);  // this is optional chaining please read it
     };
   
     // now if we refresh the page , the header page is shown but to show loading screen when the page is loading ,code stated below
        
-    if(listOfRestaurants.length==0) {
-        // return <h1>loading . . . </h1>;  // if API takes some time to load ,load shimmer UI
-         return <Shimmer/>
-    }
+    // if(listOfRestaurants.length==0) {   // this is also known as Conditional rendering
+    //     // return <h1>loading . . . </h1>;  // if API takes some time to load ,load shimmer UI
+    //      return <Shimmer/>;
+    // }
       // above line statement is same as "const arr=useState(resList);   const [listOfRestaurants,setListOfRestaurant]=arr;"
          // it can also be written as "const arr=useState(resList);  const [listOfRestaurants,setListOfRestaurants]=arr; by the way this is normal javascript"
     //  let listOfRestaurants=[];
@@ -34,7 +34,10 @@ const Body=() => {
         
 // you can create a normal list like "const list=[];"
      // whenever state variable changes or updates react rerender my component
-    return (
+ 
+    //  we can also write shimmer ifelse code like below
+    
+     return listOfRestaurants.length==0 ?(<Shimmer/>): (
         <div className="body">
             <div className="filter">
                 <button className="filter-btn" 
