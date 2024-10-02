@@ -6,7 +6,13 @@ const Body=() => {
     
        // Local State Variable - Super powerful variable
       const [listOfRestaurants,setListOfRestaurant]=useState([]);   // it works likenormal variable
-   
+      const [filteredRestaurant,setFilteredRestaurant]=useState([]);   // initially filtered restaurant is empty so we not seen any restaurent on screen
+      const [searchText,setSearchText]=useState("");
+
+
+//  Whenever state variables update, react triggers a reconciliation cycle(re-renders the component) 
+      console.log("Body Rendered");
+
       useEffect(()=>{
         fetchData();  // 
       },[]);   // when the body function render,it render cycle completed useEffect function running
@@ -19,7 +25,8 @@ const Body=() => {
     //    console.log(json);
     //    setListOfRestaurant(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)   // instead of doing this we can write this like
     setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);  // this is optional chaining please read it
-    };
+        setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);    // initially filtered restaurant is empty so we not seen any restaurent on screen
+  };
   
     // now if we refresh the page , the header page is shown but to show loading screen when the page is loading ,code stated below
        
@@ -37,9 +44,40 @@ const Body=() => {
  
     //  we can also write shimmer ifelse code like below
     
+    // whenever you
      return listOfRestaurants.length==0 ?(<Shimmer/>): (
         <div className="body">
             <div className="filter">
+              <div className="search">
+                <input
+                 type="text"
+                  className="search-box"
+                 value={searchText}
+                   onChange={(e)=>{
+                    setSearchText(e.target.value);
+                   }}
+                 />
+                <button 
+                onClick={()=>{
+                  // Filter the restaurant cards and update the UI
+                  // searchText
+                  // to track the value of these input box whatever user typing in we have to bindthat value to input box
+               
+                  
+                  console.log(searchText);
+
+                  const filteredRestaurant=listOfRestaurants.filter(
+                    // (res)=> res.info.name.includes(searchText)     /// we use it includes for getting approx value of search result
+                   // here the uppersyntex if we use search is case-sensitive to avoide so we can writeit as
+                   (res)=> res.info.name.toLowerCase().includes(searchText.toLowerCase())  
+                  //  now the error we seen in search button is we search name of restaurent it sort the restaurants other and remaining restaurent would not seen,so we never search again in restaurent without refreshing the page  ,so to avoid this we use filteredRestaurent useState hook                   
+                  );
+
+                // setListOfRestaurant(filteredRestaurant); to avoid the search error we use below code
+                setFilteredRestaurant(filteredRestaurant);
+
+                }}>search</button>
+              </div>
                 <button className="filter-btn" 
                 onClick={()=>{
                   
@@ -51,7 +89,7 @@ const Body=() => {
             </div>
             <div className="res-container">
              {
-                    listOfRestaurants.map((restaurant,index)=>(
+                    filteredRestaurant.map((restaurant,index)=>(
                     <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
 
                     )
