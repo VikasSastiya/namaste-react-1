@@ -71,3 +71,7 @@
     padding:o 20px;
     cursor:pointer;
 }
+
+.filter {
+    display:flex;
+}
