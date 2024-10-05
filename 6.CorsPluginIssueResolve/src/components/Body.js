@@ -19,8 +19,8 @@ const Body=() => {
      
      const fetchData =async ()=> {    // for resolve promice 
         const data=await fetch(   //an error will be shown after running the code to resolve install cors extension remember install its google extension 
-            // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.7195687&lng=75.8577258&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING" // the API will work only when cors plugin extension is installed in your system but if you doesn't want cors proxy extension then change the code shown below
-          "https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.7195687&lng=75.8577258&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"  // to know more visit "cors proxy" in google
+           "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.7195687&lng=75.8577258&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING" // the API will work only when cors plugin extension is installed in your system but if you doesn't want cors proxy extension then change the code shown below
+          // "https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.7195687&lng=75.8577258&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
           );     // fetch data from swiggy API
        const json=await data.json();
     //    console.log(json);
