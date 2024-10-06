@@ -18,3 +18,15 @@
 
 - if we be in any route out header is not shown to tackel this as body can change 
 - but our headershould be at their place so we see this in part4
+- to solve thisproblem i have to create children route
+
+
+# now we see how to create children route inside our app
+
+
+
+- now we have to link the about,component,home,contactUs to our routes
+
+# There are 2 types of routing in your react web apps
+- 1.Client side routing- single page just the components get interchanged
+- 2.Server side routing
