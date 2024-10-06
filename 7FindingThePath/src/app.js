@@ -2,17 +2,30 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import { createBrowserRouter,RouterProvider } from "react-router-dom";
+import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Error from "./components/Error"
+import Error from "./components/Error";
+import Cart from "./components/cart";
     
 const AppLayout=()=> {
     console.log(<Body/>);  // this is virtual dom
     return (
         <div className="app">
            <Header/>
-           <Body/>
+           {/* {So we see if path is / then <Body/> component is displayed in screen
+           if path is /about then <About/> component is displayes on screen 
+           if path is /contact then <Contact/> component is displayed on screen 
+           
+           we have to push the children over here acouding to route
+           
+           so we have to load children according to its outlet so again react-router-dom gives Outlet component
+           */}
+            <Outlet/>
+            {/* so if the rout is / outlet gives <Body/> ,if route is about outlet
+            will be <About/> and vice-versa
+             */}
+           
         </div>
     );
 };
@@ -21,16 +34,34 @@ const appRouter=createBrowserRouter([
     {
         path:"/",   // means if path is / load my <AppLayout/>
         element:<AppLayout/>,
+        children:[         // this is children route now about and contact become children of appLayout
+           {
+                  path:"/",
+                  element:<Body/>
+           },
+            {
+                path:"/about",
+                element:<About/>,
+            },
+            {
+                path:"/contact",
+                element:<Contact/>,  
+            },  
+            {
+                path:"/cart",
+                element:<Cart/>,
+            }
+        ],
         errorElement:<Error/>
     },
-    {
-        path:"/about",
-        element:<About/>,
-    },
-    {
-        path:"/contact",
-        element:<Contact/>,
-    },
+    // {
+    //     path:"/about",
+    //     element:<About/>,
+    // },
+    // {
+    //     path:"/contact",
+    //     element:<Contact/>,
+    // },
 ]);   // create browser router takes alist of path,path is nothinng but object
 
 const root=ReactDOM.createRoot(document.getElementById("root"));
