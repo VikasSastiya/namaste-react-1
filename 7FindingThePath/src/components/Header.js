@@ -1,6 +1,6 @@
 import {LOGO_URL} from "../utils/constants";
 import { useState,useEffect } from "react";
-
+import {Link} from "react-router-dom";
 
 
 const Header=()=> {
@@ -29,10 +29,24 @@ return (
             </div>
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
+                    <li>
+                        <Link to="/">Home</Link>
+
+                    </li>
+                    {/* <li><a href="/about">About Us</a></li> */}
+                    {/* so it takes me to about us page but the problem is that the whole page gets refreshed by doing this it reload the page to resolve this issue import link from react-router-dom  */}
+                    <li>
+                        <Link to="/About">About Us</Link>
+                    </li>
+                    <li>
+                    <Link to="/Contact">Contact Us</Link>
+
+                    </li>
+                    <li>
+                    <Link to="/cart">Cart</Link>
+                    </li>
+                     
+
                     <button className="login" 
                     onClick={ ()=>{
                         btnNameReact=="Login"?
