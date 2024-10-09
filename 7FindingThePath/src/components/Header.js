@@ -34,7 +34,7 @@ return (
 
                     </li>
                     {/* <li><a href="/about">About Us</a></li> */}
-                    {/* so it takes me to about us page but the problem is that the whole page gets refreshed by doing this it reload the page to resolve this issue import link from react-router-dom  */}
+                    {/* so it takes me to about us page but the problem is that the whole page gets refreshed by doing this it reload the page to resolve this issue import link from react-router-dom ,so ourreact app becomesingle page app */}
                     <li>
                         <Link to="/About">About Us</Link>
                     </li>

@@ -1,14 +1,22 @@
 import RestaurantCard from "../components/RestaurantCard"
 import {useState,useEffect} from "react";
 import Shimmer from "../components/Shimmer";
+import { Link } from "react-router-dom";
+
+
+// const [searchText,setSearchText]=useState(""); we cannot declare hook code outside the function,it throw an error
 
 const Body=() => {
+  // always 7
     
        // Local State Variable - Super powerful variable
       const [listOfRestaurants,setListOfRestaurant]=useState([]);   // it works likenormal variable
       const [filteredRestaurant,setFilteredRestaurant]=useState([]);   // initially filtered restaurant is empty so we not seen any restaurent on screen
       const [searchText,setSearchText]=useState("");
 
+      // if() {
+      //     const [searchText,setSearchText]=useState("");   // don't use useState hooks inside if/else condition,for loops and also in functions
+      // }   // the useState hooks are ment to be created inside the functional component at heigher level
 
 //  Whenever state variables update, react triggers a reconciliation cycle(re-renders the component) 
       console.log("Body Rendered");
@@ -91,8 +99,11 @@ const Body=() => {
             <div className="res-container">
              {
                     filteredRestaurant.map((restaurant,index)=>(
-                    <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
-
+                    <Link key={restaurant.info.id}
+                     to={"/restaurants/"+restaurant.info.id}
+                     >
+                      <RestaurantCard resData={restaurant}/>
+                       </Link>
                     )
                     ) }
 
