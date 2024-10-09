@@ -30,3 +30,8 @@
 # There are 2 types of routing in your react web apps
 - 1.Client side routing- single page just the components get interchanged
 - 2.Server side routing
+
+# Let us now create perticular resturent menu pages,lets create restaurent menu page
+
+- now we see how we can read restaurant/:resId in our page so ,as we directly write resId of restaurant then it will show the restaurant details
+- which is done by another super power of react-router-dom which is "import {useParam} from "rect-router-dom""
