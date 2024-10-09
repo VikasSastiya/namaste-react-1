@@ -7,6 +7,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Cart from "./components/cart";
+import RestaurantMenu from "./components/RestaurantMenu";
     
 const AppLayout=()=> {
     console.log(<Body/>);  // this is virtual dom
@@ -50,6 +51,9 @@ const appRouter=createBrowserRouter([
             {
                 path:"/cart",
                 element:<Cart/>,
+            },{
+                path:"restaurants/:resId",
+                element:<RestaurantMenu/>
             }
         ],
         errorElement:<Error/>
