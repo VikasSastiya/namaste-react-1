@@ -8,6 +8,8 @@ const  User = (props)=> {   // we can write this like "const  User = ({name})=> 
            // Api Calls
        },[])
 
+       
+
     return <div className="user-card">
         <h1>Count = {count}</h1>
         <h1>Count2 = {count2}</h1>

@@ -7,24 +7,25 @@ class About extends Component{  // we can also write this instead of "class Abou
        constructor(props) {
         super(props);
 
-        console.log("Parent Constructor");
+        // console.log("Parent Constructor");
        }
     
        componentDidMount() {
-        console.log("Prent Component Did Mount");  // when class component is callet first 
+        // console.log("Prent Component Did Mount");  // when class component is callet first 
         // construcor is called,then render is called then componentDidMount is called
     }
 
     render() {
-        console.log("Parent Render"); 
+        // console.log("Parent Render"); 
     return(
         <div>
             <h1>About</h1>
             <h2>This is Namaste React Web Series</h2>
             {/* <User name={"Akshay Saini (function)"}/>     */}
             {/* this is how we put props the name is a props  */}
-            <UserClass name={"Akshay saini (class based)"} location={"Dehradun class"}/>
-            <UserClass name={"Elon Musk"} location={"US"}/> {/*This two syntax mean we are creating two instances of class  */}
+            <UserClass name={"First"} location={"Dehradun class"}/>
+            {/* <UserClass name={"Akshay saini (class based)"} location={"Dehradun class"}/> */}
+            {/* <UserClass name={"Elon Musk"} location={"US"}/> This two syntax mean we are creating two instances of class  */}
             {/* this is how we put props in class based component */}
         </div>
     );
