@@ -24,10 +24,30 @@ class About extends Component{  // we can also write this instead of "class Abou
             {/* <User name={"Akshay Saini (function)"}/>     */}
             {/* this is how we put props the name is a props  */}
             <UserClass name={"Akshay saini (class based)"} location={"Dehradun class"}/>
+            <UserClass name={"Elon Musk"} location={"US"}/> {/*This two syntax mean we are creating two instances of class  */}
             {/* this is how we put props in class based component */}
         </div>
     );
    }
 };
 
+/*
+        - Parent Constructor
+        -Parent render
+           - Akshay Constructor
+           -Akshay Render
+          
+
+           -Elon Constructor
+           -Elon Render
+
+           <DOM UPDATED - IN SINGLE BATCH>
+
+            -Akshay ComponentDidMoun
+           -Elon ComponentDidMount
+
+        - Parent ComponentDidMount
+
+        thes is correct to know which console.log come first in console visit https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/{this is important}
+*/
 export default About;

@@ -11,11 +11,11 @@ class UserClass extends React.Component {   //  react.Component is a class which
     };
     //    console.log("constructor");
         // console.log(props);
-        console.log("Child Constructor");
+        console.log(this.props.name+"Child Constructor");
     }
 
     componentDidMount() {
-        console.log("Child Component Did Mount");  // when class component is callet first 
+        console.log(this.props.name+"Child Component Did Mount");  // when class component is callet first 
         // construcor is called,then render is called then componentDidMount is called
     
             // Api calls
@@ -25,7 +25,7 @@ class UserClass extends React.Component {   //  react.Component is a class which
          const {name,location}=this.props;
          const {count}=this.state;
 
-         console.log("Child Render");
+         console.log(this.props.name+"Child Render");
 
         //  console.log("render");
 
