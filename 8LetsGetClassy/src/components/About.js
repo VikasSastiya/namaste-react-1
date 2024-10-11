@@ -1,8 +1,22 @@
 // import User from "./User";
+import {Component} from "react";
 import UserClass from "./UserClass";
 // 
 
-const About=() =>{
+class About extends Component{  // we can also write this instead of "class About extends react.Component{"
+       constructor(props) {
+        super(props);
+
+        console.log("Parent Constructor");
+       }
+    
+       componentDidMount() {
+        console.log("Prent Component Did Mount");  // when class component is callet first 
+        // construcor is called,then render is called then componentDidMount is called
+    }
+
+    render() {
+        console.log("Parent Render"); 
     return(
         <div>
             <h1>About</h1>
@@ -13,6 +27,7 @@ const About=() =>{
             {/* this is how we put props in class based component */}
         </div>
     );
+   }
 };
 
 export default About;
