@@ -19,21 +19,28 @@ class UserClass extends React.Component {   //  react.Component is a class which
         // console.log(this.props.name+"Child Constructor");
     }
 
-   async componentDidMount() {
+//    async componentDidMount() {
+    componentDidMount() {
         // console.log(this.props.name+"Child Component Did Mount");  // when class component is callet first 
         // construcor is called,then render is called then componentDidMount is called
     
             // Api calls
+            // setInterval(()=> {    // the problem itn this code it will render and not stop to stop this we use below code
+            this.timer=setInterval(()=> {
+                console.log("NAMASTE REACT OP ");
+            },1000);
 
-        const data=await fetch(" https://api.github.com/users/akshaymarch7")    // to get github api,just type github api ,then in link open Users,there open get a user ,on left side you can see  https://api.github.com/users/USERNAME,type your
-          // if i create portfolio website i can create apis using github
-        const json=await data.json();
+            console.log("Child - componentDidMount");
 
-        this.setState({
-            userInfo:json,
-        })
+        // const data=await fetch(" https://api.github.com/users/akshaymarch7")    // to get github api,just type github api ,then in link open Users,there open get a user ,on left side you can see  https://api.github.com/users/USERNAME,type your
+        //   // if i create portfolio website i can create apis using github
+        // const json=await data.json();
 
-        console.log(json);
+        // this.setState({
+        //     userInfo:json,
+        // })
+
+        // console.log(json);
 
     }
 
@@ -42,6 +49,7 @@ class UserClass extends React.Component {   //  react.Component is a class which
     }
 
     componentWillUnmount(){
+           clearInterval(this.timer);  // this is the code to stop setInterval
                 console.log("component will unmount");                          // when component will disappear this unmount will be called 
     }
 
