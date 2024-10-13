@@ -1,6 +1,7 @@
 import {LOGO_URL} from "../utils/constants";
 import { useState,useEffect } from "react";
 import {Link} from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 const Header=()=> {
@@ -8,6 +9,9 @@ const Header=()=> {
     let btnName="Login";
 
     const [btnNameReact,setBtnNameReact]=useState("Login");
+   
+    const onlineStatus=useOnlineStatus();
+   
     console.log("Header render");
 // as I click to the button react update this btnNameReact variable and also refresh the header component
     // it trigger the reconcilation cycle
@@ -29,6 +33,10 @@ return (
             </div>
             <div className="nav-items">
                 <ul>
+            <li>
+               Online Status: {onlineStatus ? <h1>online</h1> : <h1>offline</h1>}
+                    </li>
+
                     <li>
                         <Link to="/">Home</Link>
 

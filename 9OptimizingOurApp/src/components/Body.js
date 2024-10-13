@@ -2,7 +2,7 @@ import RestaurantCard from "../components/RestaurantCard"
 import {useState,useEffect} from "react";
 import Shimmer from "../components/Shimmer";
 import { Link } from "react-router-dom";
-
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 // const [searchText,setSearchText]=useState(""); we cannot declare hook code outside the function,it throw an error
 
@@ -36,7 +36,14 @@ const Body=() => {
     setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);  // this is optional chaining please read it
         setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);    // initially filtered restaurant is empty so we not seen any restaurent on screen
   };
-  
+
+    const onlineStatus=useOnlineStatus();
+
+    if(onlineStatus==false) {  return (
+          <h1>
+      Looks like you're offline!! Please check your internet connection; 
+      </h1>
+  );}
     // now if we refresh the page , the header page is shown but to show loading screen when the page is loading ,code stated below
        
     // if(listOfRestaurants.length==0) {   // this is also known as Conditional rendering
