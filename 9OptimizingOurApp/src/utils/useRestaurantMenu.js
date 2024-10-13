@@ -1,6 +1,7 @@
   import { useState,useEffect } from "react";
 import { Menu_API } from "../utils/constants";
 
+   // this is how we create useRestaurantMenu() hook
 
  export const useRestaurantMenu=(resId)=>{
      // fetchdata
