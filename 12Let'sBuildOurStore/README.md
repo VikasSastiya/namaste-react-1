@@ -13,7 +13,7 @@
  ![alt text](image.png)
     - this is how we write the data
  here see the paragraph and read it carefully below
- - when we click on this add button ,it dispatches the action ,which calls the reducer function,which udates/modifies cart(slice) of store
+ - when we click on this add button ,it dispatches an action ,which calls the reducer function,which udates/modifies cart(slice) of store
 
 
       ![alt text](image-1.png)
@@ -23,3 +23,23 @@
 
  -this is how the whole cycle works
     ![alt text](image-2.png)
+
+    ![alt text](image-3.png)
+
+
+# redux toolkit
+ - Install libraries-redux toolkit which is @reduxjs/toolkit and react-redux
+ - Build our store
+ - Connect our store to our app
+ - Slice (cartSlice)
+ - dispatch(action)
+ -selector 
+
+ first install npm install @reduxjs/toolkit ,then install react-redux
+
+ - lets create now appStore.js in utils
+
+ - please search the difference between this three
+       onClick={handleAddItem}
+       onClick={()=>handleAddItem(item)}
+       onClick={handleAddItem(item)}  you should know ,this is normal javascript
