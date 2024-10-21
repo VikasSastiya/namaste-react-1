@@ -11,4 +11,11 @@
 
    - must search and read lifting the state up in react.dev docs
 
-   
+   # now we understand about props drilling
+
+   - react give some react context to avoid props drilling
+
+
+   - in class based component we cannot use hooks
+
+   - context is a global scope
