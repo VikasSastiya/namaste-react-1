@@ -27,7 +27,7 @@ class UserClass extends React.Component {   //  react.Component is a class which
             // Api calls
             // setInterval(()=> {    // the problem itn this code it will render and not stop to stop this we use below code
             this.timer=setInterval(()=> {
-                console.log("NAMASTE REACT OP ");
+                // console.log("NAMASTE REACT OP ");
             },1000);
 
             console.log("Child - componentDidMount");

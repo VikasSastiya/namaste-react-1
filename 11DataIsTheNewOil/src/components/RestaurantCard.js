@@ -1,18 +1,22 @@
+import { useContext } from "react";
 import {CDN_URL} from "../utils/constants";   // this is the way we import named url
+import UserContext from "../utils/UserContext";
 // for default url we use "import CDN_URL from "../../utils/constants";"
-
-const RestaurantCard=(props)=> {
+const RestaurantCard = (props) => {
+    // Ensure correct syntax here
+    const { loggedInUser } = useContext(UserContext); 
+  
     const { 
-        resData, 
-        resName, 
-        cuisines, 
-        avgRating, 
-        costForTwo, 
-        slaString,
-        aggregatedDiscountInfoV3
-           }=props;
-   
-    const Discount=resData?.info?.aggregatedDiscountInfoV3||aggregatedDiscountInfoV3;
+      resData, 
+      resName, 
+      cuisines, 
+      avgRating, 
+      costForTwo, 
+      slaString,
+      aggregatedDiscountInfoV3 
+    } = props;
+  
+    const Discount = resData?.info?.aggregatedDiscountInfoV3 || aggregatedDiscountInfoV3;
     const name = resData?.info?.name || resName;
     const cuisineList = resData?.info?.cuisines || cuisines;
     const rating = resData?.info?.avgRating || avgRating;
@@ -32,6 +36,7 @@ const RestaurantCard=(props)=> {
             <h4>{rating} stars</h4>
             <h4>{cost} for two</h4>
             <h4>{deliveryTime}</h4>
+            <h4>User : {loggedInUser}</h4>
              {/* Render specific parts of the Discount object */}
              {Discount && (
                 <div className="flex  text-white absolute inset-x-0 space-x-2 top-60">

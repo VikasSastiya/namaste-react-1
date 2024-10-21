@@ -1,8 +1,9 @@
 import RestaurantCard from "../components/RestaurantCard"
-import {useState,useEffect} from "react";
+import {useState,useEffect,useContext} from "react";
 import Shimmer from "../components/Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 // const [searchText,setSearchText]=useState(""); we cannot declare hook code outside the function,it throw an error
 
@@ -19,7 +20,7 @@ const Body=() => {
       // }   // the useState hooks are ment to be created inside the functional component at heigher level
 
 //  Whenever state variables update, react triggers a reconciliation cycle(re-renders the component) 
-      console.log("Body Rendered",listOfRestaurants);
+      // console.log("Body Rendered",listOfRestaurants);
 
       useEffect(()=>{
         fetchData();  // 
@@ -44,6 +45,9 @@ const Body=() => {
       Looks like you're offline!! Please check your internet connection; 
       </h1>
   );}
+
+
+     const {loggedInUser,setUserName}=useContext(UserContext)
     // now if we refresh the page , the header page is shown but to show loading screen when the page is loading ,code stated below
        
     // if(listOfRestaurants.length==0) {   // this is also known as Conditional rendering
@@ -97,6 +101,13 @@ const Body=() => {
               </div>
 
                 <div className="search m-4 p-4 flex items-center">
+                <div className="search m-4 p-4 flex items-center">
+                  <label>UserName : </label>
+                  <input className="border border-black p-2"
+                      value={loggedInUser}
+                    onChange={(e)=>setUserName(e.target.value)}
+                    />
+                  </div>
                   <button className="px-4 py-2 bg-gray-100 rounded-lg" 
                 onClick={()=>{
                   
