@@ -3,17 +3,23 @@ import { useState,useContext } from "react";
 import {Link} from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 
 const Header=()=> {
 
-    let btnName="Login";
+    // let btnName="Login";
 
     const [btnNameReact,setBtnNameReact]=useState("Login");
    
     const onlineStatus=useOnlineStatus();
 
      const {loggedInUser}=useContext(UserContext);
+
+     // we use a Selector which is a hook inside react
+    // NOW we a SUBSCRIBIND to our store using selector
+     const cartItems=useSelector((store)=>store.cart.items);
+         console.log(cartItems);
     //  console.log(data)
    
     // console.log("Header render");
@@ -57,8 +63,8 @@ return (
                     <Link to="/grocery">Grocery</Link>
 
                     </li>
-                    <li className="px-4">
-                    <Link to="/cart">Cart</Link>
+                    <li className="px-4 font-bold text-xl">
+                    <Link to="/cart">Cart ({cartItems.length} items)</Link>
                     </li>
                      
 
