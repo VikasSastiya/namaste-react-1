@@ -9,6 +9,8 @@ import Error from "./components/Error";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 // import Grocery from "./components/Grocery";
 
     // Chunking - to break down our app to smaller chunks so you don't put load on single bundle
@@ -36,6 +38,8 @@ const AppLayout=()=> {
        },[]);
 
     return (
+
+        <Provider store={appStore}>
         <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
         <div className="app">
             
@@ -61,6 +65,7 @@ const AppLayout=()=> {
              
         </div>
         </UserContext.Provider>
+        </Provider>
 
     );
 };
