@@ -43,3 +43,14 @@
        onClick={handleAddItem}
        onClick={()=>handleAddItem(item)}
        onClick={handleAddItem(item)}  you should know ,this is normal javascript
+
+
+       - install redux dev tools extension 
+
+       - use redux when component becomes so complicated as so many subscribes
+
+       - https://redux-toolkit.js.org/introduction/getting-started ,go to the website and read RTK Query,RTK Query Quick start
+
+       - in older version of redux we use middlewere ,thungs earlier
+
+       - 
