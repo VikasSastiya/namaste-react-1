@@ -2,7 +2,7 @@
   import cartReducer from "./cartSlice";
 
 const appStore=configureStore({
-    reducer:{
+    reducer:{        // there is difference in reducer and reducers
         cart:cartReducer,
     }
 });
