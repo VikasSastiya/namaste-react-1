@@ -6,7 +6,7 @@ const Cart=()=> {      // remember initialize the function with starting with ca
     //  const store=useSelector((store)=>store);   //we can also write like this but this codeis less efficient 
     //  const cartItems=store.cart.items;
      // better to write below code
-     const cartItems=useSelector((store)=>store.cart.items);
+     const cartItems=useSelector((store)=>store.cart.items); // useSelector means you are subscribing to the specific portion of the store
      console.log(cartItems);
 
      const dispatch=useDispatch(); 
